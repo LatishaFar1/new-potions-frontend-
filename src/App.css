@@ -1,17 +1,10 @@
 .App {
   text-align: center;
-}
+  font-family: 'Qahiri', sans-serif;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
+@import url('https://fonts.googleapis.com/css2?family=Qahiri&display=swap');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -28,11 +21,160 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+/* NavBar */
+.nav{
+  flex-direction: row;
+  box-sizing: border-box;
+  margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    line-height: 2.5;
+    color: #4f4f4f;
+    font-size: 22px;
+    font-weight: 400;
+    box-sizing: border-box;
+    border-style: double;
+    text-decoration: none;
+    background-color: rgb(239, 210, 210);
+    
+}
+
+.nav-link{
+  box-sizing: border-box;
+  -webkit-box-direction: normal;
+  list-style: none;
+  text-decoration: none;
+  color: #915f5f;
+  padding: 10px;
+}
+
+/* Home */
+.home-img{
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.mask{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-color:  rgba(73, 52, 52, 0.507);
+}
+.home-flex1{
+  -webkit-box-pack: center!important;
+  justify-content: center!important;
+  height: 100%!important;
+  display: flex!important;
+  box-sizing: border-box;
+  text-align: center!important;
+  font-family: var(--mdb-font-roboto);
+  line-height: 1.6;
+  color: #4f4f4f;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.text-mid{
+  color: #fff!important;
+}
+h1{
+  font-size: calc(1.375rem + 1.5vw);
+  font-weight: 500;
+  line-height: 1.2;
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.title-1{
+  margin-bottom: 1rem!important;
+  box-sizing: border-box;
+}
+.title-2{
+  margin-bottom: 1rem!important;
+  font-size: calc(1.275rem + .3vw);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.button{
+  font-size: .875rem;
+  line-height: 1.6;
+  color: #fbfbfb;
+  border-color: #fbfbfb;
+  box-shadow: none;
+  text-transform: uppercase;
+    vertical-align: bottom;
+    border: 0;
+    border-radius: 0.3rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    background-color: transparent;
+    border-color: #fbfbfb;
+    border-width: 0.125rem;
+  border-style: solid;
+  padding: 20px;
+  border-radius: 0.3rem;
+}
+
+.button2{
+  font-size: .875rem;
+  line-height: 2;
+  color: #9f7070;
+  box-shadow: none;
+  text-transform: uppercase;
+    vertical-align: bottom;
+    border: 0;
+    border-radius: 0.5rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    background-color: transparent;
+    border-color: #d2a0a0;
+    border-width: 0.2rem;
+  border-style: solid;
+  padding: 10px;
+  border-radius: 0.15rem;
+}
+/* Potions */
+.Potion-img{
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  
+}
+
+/* Potion Card */
+.cards{
+  margin-top: 0.3rem;
+  margin-right: 100px;
+  margin-bottom: 1rem;
+  margin-left: 100px;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
 }
