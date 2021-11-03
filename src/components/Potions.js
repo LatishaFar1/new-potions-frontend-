@@ -1,7 +1,7 @@
 import React from "react";
 import PotionsCard from "./PotionsCard";
 
-function Potions({potions, handleDelete}){
+function Potions({potions, setPotions, handleDelete}){
 
 
     return (
@@ -14,7 +14,7 @@ function Potions({potions, handleDelete}){
 
         </div>
         {potions.map(potion => 
-        <PotionsCard key={potion.id} price={potion.price} potion={potion} handleDelete={handleDelete}/>) } 
+        <PotionsCard setPotions={setPotions} key={potion.id} price={potion.price} potion={potion} potions={potions} handleDelete={handleDelete}/>) } 
         </>
     )
 };

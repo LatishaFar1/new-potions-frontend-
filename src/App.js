@@ -6,6 +6,7 @@ import Potions from "./components/Potions";
 import Order from "./components/Order";
 import Cart from './components/Cart';
 import {useState, useEffect} from "react";
+import { useHistory } from "react-router-dom";
 import { CartProvider } from 'react-use-cart';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
@@ -13,7 +14,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 function App() {
 
   const [potions, setPotions] = useState([])
-
+  const history = useHistory();
 
   useEffect(() => {
     fetch("http://localhost:9393/potions")
@@ -26,7 +27,8 @@ function App() {
 
   const addOrder = (potionsData) => {
     let params = {
-      ...potionsData
+      ...potionsData, 
+      affect_id:1
     }
     fetch("http://localhost:9393/potions", {
       method: "POST",
@@ -38,7 +40,7 @@ function App() {
     })
     .then(response => response.json())
     .then(potionsData => {
-      setPotions([])
+      setPotions([...potions, potionsData])
     })
   }
 
@@ -47,7 +49,9 @@ function App() {
       method: "DELETE",
     })
     .then((response) => response.json())
-    
+    // .then(() => {
+    //   history.push("/Potions")
+  // })
   };
   
 
@@ -62,7 +66,7 @@ function App() {
       </Route>
 
       <Route exact path="/Potions">
-      <Potions potions={potions} handleDelete={handleDelete}/>
+      <Potions potions={potions} setPotions={setPotions} handleDelete={handleDelete}/>
       </Route>
 
 

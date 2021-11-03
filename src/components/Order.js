@@ -4,10 +4,7 @@ import React, {useState} from "react";
 function Order({addOrder}){
 
 // const[date, setDate] = useState("");
-const[name, setName] = useState("");
-const[desc, setDesc] = useState("");
-const[price, setPrice] = useState("");
-const[volatility, setVolatility] = useState("");
+
 const [formInfo, setFormInfo] = useState({
     name: "",
     desc: "",

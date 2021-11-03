@@ -4,7 +4,7 @@ import {AiTwotoneFire } from "react-icons/ai";
 
 
 
-function PotionsCard({potion, handleDelete}){
+function PotionsCard({potion, handleDelete, setPotions, potions}){
 const { addItem} = useCart();
 // const [volatility, setVolatility] = useState("0");
   // const [cart, setCart] = useState([]);
@@ -15,8 +15,17 @@ const { addItem} = useCart();
   // };
 
   function handleVolat(potion){
+    let updatedPotions = potions.map(p => {
+      if (p.id === potion.id) {
+        p.volatility += 1
+        return p
+      }else{
+        return p 
+      }
+    })
+    setPotions(updatedPotions)
     let params = {
-      volatility: potion.volatility + 1
+      volatility: potion.volatility 
     }
     fetch(`http://localhost:9393/potions/${potion.id}`, {
     method: "PATCH",
@@ -45,6 +54,8 @@ return (
     {/* FIX ME  {potion.img_url} */}
     {/* <button className="button2" 
     onClick={addItem(potion)}>Add</button> */}
+    <br/>
+    {potion.affect.element}
   </div>
   <button onClick={(e)=> handleDelete(potion.id)}className="button2">Delete</button>
 </div>
