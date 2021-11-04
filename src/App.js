@@ -4,17 +4,15 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Potions from "./components/Potions";
 import Order from "./components/Order";
-import Cart from './components/Cart';
 import {useState, useEffect} from "react";
-import { useHistory } from "react-router-dom";
-import { CartProvider } from 'react-use-cart';
+
+
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 
 function App() {
-
   const [potions, setPotions] = useState([])
-  const history = useHistory();
+  
 
   useEffect(() => {
     fetch("http://localhost:9393/potions")
@@ -27,8 +25,8 @@ function App() {
 
   const addOrder = (potionsData) => {
     let params = {
-      ...potionsData, 
-      affect_id:1
+      ...potionsData
+      // element
     }
     fetch("http://localhost:9393/potions", {
       method: "POST",
@@ -49,15 +47,13 @@ function App() {
       method: "DELETE",
     })
     .then((response) => response.json())
-    // .then(() => {
-    //   history.push("/Potions")
-  // })
+ 
   };
   
 
   return (
     <div className="App">
-      <CartProvider>
+    
       <Router>
       <NavBar />
 
@@ -74,11 +70,9 @@ function App() {
       <Order addOrder={addOrder} />
       </Route>
 
-      <Route exact path="/Cart">
-      <Cart potions={potions} />
-      </Route>
+     
       </Router>
-      </CartProvider>
+    
       
     </div>
   );

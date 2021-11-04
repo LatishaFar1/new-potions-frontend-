@@ -1,18 +1,10 @@
-import React, {useState} from "react";
-import { useCart } from "react-use-cart";
+import React from "react";
 import {AiTwotoneFire } from "react-icons/ai";
 
 
 
 function PotionsCard({potion, handleDelete, setPotions, potions}){
-const { addItem} = useCart();
-// const [volatility, setVolatility] = useState("0");
-  // const [cart, setCart] = useState([]);
 
-  // const addToCart = (potion) => {
-  //     console.log("added to cart")
-  //     setCart([...cart, potion]);
-  // };
 
   function handleVolat(potion){
     let updatedPotions = potions.map(p => {
@@ -49,13 +41,15 @@ return (
     <br/>
     price: ${potion.price}
     </p>
-    Volatility Level: {potion.volatility}
-   { potion.volatility === 3 ?  <button disabled >{<AiTwotoneFire/>}</button> :  <button onClick={(e)=> handleVolat(potion)}>{<AiTwotoneFire/>}</button>}
-    {/* FIX ME  {potion.img_url} */}
-    {/* <button className="button2" 
-    onClick={addItem(potion)}>Add</button> */}
+   
+    <div style={{fontSize: 25, color: "#d42019"}}> Volatility Level: {potion.volatility}
+    { potion.volatility === 3 ?  <button disabled >{<AiTwotoneFire/>}</button> :  <button className="button3" onClick={(e)=> handleVolat(potion) }>{<AiTwotoneFire/>}</button>}
+    </div>
+
     <br/>
+    <div className="Affect-display">
     {potion.affect.element}
+    </div>
   </div>
   <button onClick={(e)=> handleDelete(potion.id)}className="button2">Delete</button>
 </div>

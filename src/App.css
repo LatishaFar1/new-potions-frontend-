@@ -34,7 +34,7 @@
     padding-inline-start: 40px;
     line-height: 2.5;
     color: #4f4f4f;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 400;
     box-sizing: border-box;
     border-style: double;
@@ -169,6 +169,9 @@ h1{
   
 }
 
+
+
+
 /* Potion Card */
 .cards{
   margin-top: 0.3rem;
@@ -177,4 +180,28 @@ h1{
   margin-left: 100px;
   display: grid;
   /* grid-template-columns: 1fr 1fr 1fr; */
+}
+
+.button3{
+  font-size: 1rem;
+  line-height: 1.5;
+  color:#d42019;
+    vertical-align: bottom;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border-color: #df6262;
+    border-width: 0.2rem;
+  border-style: solid;
+  padding: 5px;
+  border-radius: 1rem;
+}
+
+.Affect-display{
+  font-size: 25px;
+}
+
+/* Order */
+.orderLabels{
+  font-size: 25px;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import { GiPotionBall, GiCauldron, GiQuillInk, GiShoppingCart } from "react-icons/gi";
+import { GiPotionBall, GiCauldron, GiQuillInk } from "react-icons/gi";
 
 function NavBar(){
 
@@ -14,8 +14,6 @@ function NavBar(){
        <Link to="/Potions" className="nav-link">Potions </Link>
        <GiQuillInk />
        <Link to="/Order" className="nav-link">Place an Order </Link>
-       <GiShoppingCart />
-       <Link to="/Cart" className="nav-link">Cart </Link>
         </div>
        </nav>
 
